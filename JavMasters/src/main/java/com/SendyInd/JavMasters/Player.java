@@ -1,5 +1,8 @@
 package com.SendyInd.JavMasters;
 
+/**
+ * Player
+ */
 public class Player
 {
     private int _health;

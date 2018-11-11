@@ -1,8 +1,7 @@
 package com.SendyInd.JavMasters;
-import com.SendyInd.JavMasters.*;
 /**
- * Hello world!
- *
+ * JavMasters
+ * App
  */
 public class App 
 {
@@ -12,5 +11,8 @@ public class App
         //set up new player
         Player _player = new Player(10);
         System.out.println(_player.GetHealth());
+
+        Dice _dice = new Dice();
+        System.out.println(_dice.GetName());
     }
 }

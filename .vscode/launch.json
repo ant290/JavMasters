@@ -23,13 +23,14 @@
             "stopOnEntry": false,
             "mainClass": "com.SendyInd.JavMasters.App",
             "args": ""
-        },
+        }
+        /*,
         {
             "type": "java",
             "name": "Debug (Attach)",
             "request": "attach",
             "hostName": "localhost",
             "port": "<debug port of remote debuggee>"
-        }
+        }*/
     ]
 }
