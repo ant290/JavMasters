@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "JavMasters",
+                "projectName": "JavMasters",
+                "workingDirectory": "d:\\Development\\JavMasters\\JavMasters",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "JavMasters",
+                "projectName": "JavMasters",
+                "workingDirectory": "d:\\Development\\JavMasters\\JavMasters",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
