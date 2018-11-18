@@ -19,6 +19,7 @@ public class GameContainer {
 
     public void startGame()
     {
+        System.out.println("Player's starting health is: " + _player.GetHealth());
         while(_player.GetHealth() > 0)
         {
             //take turn
