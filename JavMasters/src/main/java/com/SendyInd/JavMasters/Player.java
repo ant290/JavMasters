@@ -22,6 +22,11 @@ public class Player
         return _health;
     }
 
+    public void SetHealth(int health)
+    {
+        _health = health;
+    }
+
     public void TakeDamage(int damage)
     {
         _health -= damage;

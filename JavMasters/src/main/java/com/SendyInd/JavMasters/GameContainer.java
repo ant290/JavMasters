@@ -1,5 +1,7 @@
 package com.SendyInd.JavMasters;
 
+import java.util.Scanner;
+
 /**
  * GameContainer
  */
@@ -11,6 +13,7 @@ public class GameContainer {
 
     public GameContainer()
     {
+
         //set up all the components
         _player = new Player();
         _turnCounter = new TurnCounter();
@@ -19,19 +22,35 @@ public class GameContainer {
 
     public void startGame()
     {
+        System.out.print("Enter starting health: ");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+        scanner.close();
+        
+        try {
+            _player.SetHealth(Integer.parseInt(input));
+        }
+        catch(Exception exception) {
+            System.out.println("Not a valid number, using default " + _player.GetHealth());
+        }
+
+        System.out.println();
+
+        System.out.println("Player's starting health is: " + _player.GetHealth() + "\n");
+
         while(_player.GetHealth() > 0)
         {
             //take turn
             _turnCounter.incrementTurn();
 
             int roll = _dice.Roll();
-            System.out.println("rolled: " + roll);
             _player.TakeDamage(roll);
+            System.out.println("rolled: " + roll + "; health now: " + _player.GetHealth());
         }
 
         int turn = _turnCounter.getTurn();
         int health = _player.GetHealth();
-        System.out.println("game took " + turn + " turns to reduce player to " + health + " health");
+        System.out.println("\n" + "game took " + turn + " turns to reduce player to " + health + " health" + "\n");
 
     }
 }
