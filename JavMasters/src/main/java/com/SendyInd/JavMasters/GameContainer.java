@@ -27,7 +27,13 @@ public class GameContainer {
         String input = scanner.next();
         scanner.close();
         
-        _player.SetHealth(Integer.parseInt(input));
+        try {
+            _player.SetHealth(Integer.parseInt(input));
+        }
+        catch(Exception exception) {
+            System.out.println("Not a valid number, using default " + _player.GetHealth());
+        }
+
         System.out.println();
 
         System.out.println("Player's starting health is: " + _player.GetHealth() + "\n");
