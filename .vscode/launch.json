@@ -9,7 +9,9 @@
             "name": "Debug (Launch)",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
+            //"console": "internalConsole",
+            // To support Java console input....
+            "console": "integratedTerminal",
             "stopOnEntry": false,
             "mainClass": "",
             "args": ""
