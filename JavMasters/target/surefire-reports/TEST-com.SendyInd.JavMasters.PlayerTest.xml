@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="com.SendyInd.JavMasters.PlayerTest" time="0" errors="0" skipped="0">
+<testsuite tests="3" failures="1" name="com.SendyInd.JavMasters.PlayerTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.1+13-LTS"/>
@@ -66,6 +66,15 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="com.SendyInd.JavMasters.PlayerTest" name="test_Default_Health" time="0"/>
+  <testcase classname="com.SendyInd.JavMasters.PlayerTest" name="test_TakeDamage" time="0.002">
+    <failure message="expected:&lt;15&gt; but was:&lt;14&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;15&gt; but was:&lt;14&gt;
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:282)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:201)
+	at junit.framework.Assert.assertEquals(Assert.java:207)
+	at com.SendyInd.JavMasters.PlayerTest.test_TakeDamage(PlayerTest.java:44)
+</failure>
+  </testcase>
   <testcase classname="com.SendyInd.JavMasters.PlayerTest" name="test_Given_Health" time="0"/>
-  <testcase classname="com.SendyInd.JavMasters.PlayerTest" name="test_TakeDamage" time="0"/>
 </testsuite>
