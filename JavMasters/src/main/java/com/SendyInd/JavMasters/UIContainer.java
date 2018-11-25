@@ -1,0 +1,64 @@
+package com.SendyInd.JavMasters;
+
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.*;
+import javafx.scene.layout.*;
+/**
+ * UIContainer
+ * Used to house the UI building blocks.
+ */
+public class UIContainer{
+    Scene scene;
+
+    /**
+     * Constructor, builds the UI blocks
+     */
+    public UIContainer(){
+        buildContent();
+    }
+
+    private void buildContent(){
+        //set up the BorderPane object to contain the UI
+        BorderPane pageContainter = new BorderPane();
+
+        //set up the FlowPane to contain the main contents
+        FlowPane contentContainer = new FlowPane();
+        pageContainter.setCenter(contentContainer);
+
+        // set up menu items using fxml
+        HBox menuBar;
+        try {
+            menuBar = FXMLLoader.load(getClass().getResource("MenuBar.fxml"));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block tidy up logging
+            menuBar = new HBox();
+			e.printStackTrace();
+		}
+        menuBar.setSpacing(10);
+        pageContainter.setTop(menuBar);
+        
+        //set up footer items
+        HBox footerBar;
+        try {
+            footerBar = FXMLLoader.load(getClass().getResource("FooterBar.fxml"));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block tidy up logging
+            footerBar = new HBox();
+			e.printStackTrace();
+		}
+        footerBar.setSpacing(10);
+        pageContainter.setBottom(footerBar);
+        
+        //spin up the scene and apply components
+        scene = new Scene(pageContainter,300,400) ;
+    }
+
+    /**
+     * Sends back the scene that has been created
+     * @return JavaFX.Scene
+     */
+    public Scene getContent(){
+        return scene;
+    }
+}
