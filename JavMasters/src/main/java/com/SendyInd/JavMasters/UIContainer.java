@@ -10,6 +10,7 @@ import javafx.scene.layout.*;
  */
 public class UIContainer{
     Scene scene;
+    FlowPane contentContainer;
 
     /**
      * Constructor, builds the UI blocks
@@ -23,7 +24,7 @@ public class UIContainer{
         BorderPane pageContainter = new BorderPane();
 
         //set up the FlowPane to contain the main contents
-        FlowPane contentContainer = new FlowPane();
+        contentContainer = new FlowPane();
         pageContainter.setCenter(contentContainer);
 
         // set up menu items using fxml
@@ -60,5 +61,13 @@ public class UIContainer{
      */
     public Scene getContent(){
         return scene;
+    }
+
+    /**
+     * Adds the handed in node to the central content
+     * @param node
+     */
+    public void addContent(Node node){
+        contentContainer.getChildren().add(node);
     }
 }
