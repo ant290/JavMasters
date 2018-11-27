@@ -10,7 +10,7 @@ public class GameContainer {
     private TurnCounter _turnCounter;
     private Dice _dice;
     private UIContainer _uIContainer;
-    private UIWriter _uIWriter;
+    private IWriter _writer;
 
     /**
      * Constructor taking in a UIContainer, this allows for UI controls to be handled
@@ -23,7 +23,8 @@ public class GameContainer {
         _turnCounter = new TurnCounter();
         _dice = new Dice();
         _uIContainer = uiContainer;
-        _uIWriter = new UIWriter(_uIContainer);
+        // TODO set up DI for IWriter
+        _writer = new UIWriter(_uIContainer);
     }
 
     /**
@@ -52,7 +53,7 @@ public class GameContainer {
         _turnCounter.incrementTurn();
 
         int roll = _dice.Roll();
-        _uIWriter.WriteLine("rolled: " + roll);
+        _writer.WriteLine("rolled: " + roll);
         _player.TakeDamage(roll);
     }
 
@@ -65,6 +66,6 @@ public class GameContainer {
     {
         int turn = _turnCounter.getTurn();
         int health = _player.GetHealth();
-        _uIWriter.WriteLine("game took " + turn + " turns to reduce player to " + health + " health");    
+        _writer.WriteLine("game took " + turn + " turns to reduce player to " + health + " health");    
     }
 }

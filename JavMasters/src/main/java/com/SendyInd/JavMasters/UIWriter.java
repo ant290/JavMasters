@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
  * UIWriter
  * Used to write results out to the UI
  */
-public class UIWriter {
+public class UIWriter implements IWriter{
 
     private UIContainer _uiContainer;
     private Label _textOutput;
