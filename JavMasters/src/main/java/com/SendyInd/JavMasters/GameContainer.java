@@ -9,8 +9,8 @@ public class GameContainer {
     private Player _player;
     private TurnCounter _turnCounter;
     private Dice _dice;
-    UIContainer _uIContainer;
-    UIWriter _uIWriter;
+    private UIContainer _uIContainer;
+    private UIWriter _uIWriter;
 
     /**
      * Constructor taking in a UIContainer, this allows for UI controls to be handled

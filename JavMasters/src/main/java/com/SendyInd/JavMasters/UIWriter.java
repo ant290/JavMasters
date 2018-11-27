@@ -8,24 +8,24 @@ import javafx.scene.control.Label;
  */
 public class UIWriter {
 
-    UIContainer uiContainer;
-    Label textOutput;
+    private UIContainer _uiContainer;
+    private Label _textOutput;
 
     /**
      * construct the UIWriter with the given UIContainer class
      * @param _UiContainer
      */
-    public UIWriter(UIContainer _UiContainer){
-        uiContainer = _UiContainer;
+    public UIWriter(UIContainer uIContainer){
+        _uiContainer = uIContainer;
 
-        textOutput = new Label();
-        textOutput.setWrapText(true);
+        _textOutput = new Label();
+        _textOutput.setWrapText(true);
         //textOutput.setStyle("");
-        uiContainer.addContent(textOutput);
+        _uiContainer.addContent(_textOutput);
     }
 
     public void WriteLine(String words){
-        var combinedText = textOutput.getText() + words + "\n";
-        textOutput.setText(combinedText);
+        var combinedText = _textOutput.getText() + words + "\n";
+        _textOutput.setText(combinedText);
     }
 }
