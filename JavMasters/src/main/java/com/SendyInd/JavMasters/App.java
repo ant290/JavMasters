@@ -12,8 +12,6 @@ public class App extends Application
     public static void main( String[] args )
     {
         launch();
-        //GameContainer gameContainer = new GameContainer();
-        //gameContainer.startGame();
     }
 
     @Override
@@ -22,5 +20,8 @@ public class App extends Application
         stage.setTitle("JavMasters");
         stage.setScene(uIContainer.getContent());
         stage.show();
+
+        GameContainer gameContainer = new GameContainer(uIContainer);
+        gameContainer.startGame();
     }
 }

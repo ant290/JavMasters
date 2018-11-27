@@ -2,19 +2,28 @@ package com.SendyInd.JavMasters;
 
 /**
  * GameContainer
+ * Used to maintain the game state
  */
 public class GameContainer {
 
     private Player _player;
     private TurnCounter _turnCounter;
     private Dice _dice;
+    UIContainer _uIContainer;
+    UIWriter _uIWriter;
 
-    public GameContainer()
+    /**
+     * Constructor taking in a UIContainer, this allows for UI controls to be handled
+     * @param uiContainer
+     */
+    public GameContainer(UIContainer uiContainer)
     {
         //set up all the components
         _player = new Player();
         _turnCounter = new TurnCounter();
         _dice = new Dice();
+        _uIContainer = uiContainer;
+        _uIWriter = new UIWriter(_uIContainer);
     }
 
     /**
@@ -43,7 +52,7 @@ public class GameContainer {
         _turnCounter.incrementTurn();
 
         int roll = _dice.Roll();
-        System.out.println("rolled: " + roll);
+        _uIWriter.WriteLine("rolled: " + roll);
         _player.TakeDamage(roll);
     }
 
@@ -56,6 +65,6 @@ public class GameContainer {
     {
         int turn = _turnCounter.getTurn();
         int health = _player.GetHealth();
-        System.out.println("game took " + turn + " turns to reduce player to " + health + " health");    
+        _uIWriter.WriteLine("game took " + turn + " turns to reduce player to " + health + " health");    
     }
 }
