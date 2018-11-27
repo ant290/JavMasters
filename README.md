@@ -6,3 +6,7 @@ The player will have a pool of health which they will attempt to deplete by coll
 My initial plan is to set up a player object, which will have a health pool and a collection of dice.
 I will then go forward in creating various dice collections which will represent states of play for those dice.
 I will then work on the impact of the dice in those collections.
+
+############Please Note####################
+This application uses java 11 and JavaFX for the UI.
+JavaFX does not automatically get shipped with java 11 and so will need to be installed to the project for it to build.
