@@ -7,7 +7,7 @@
 
 <HBox>
     <children>
-        <Label text="Menu" />
-        <Button text="Start" />
+        <Label text="Menu" id="menuLabel" />
+        <Button text="Start" id="startButton" />
     </children>
 </HBox>

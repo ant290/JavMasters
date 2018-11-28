@@ -1,8 +1,14 @@
 package com.SendyInd.JavMasters;
 
 import java.io.IOException;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 /**
  * UIContainer
@@ -11,6 +17,9 @@ import javafx.scene.layout.*;
 public class UIContainer{
     Scene scene;
     FlowPane contentContainer;
+
+    @FXML Button startButton;
+    @FXML Label menuLabel;
 
     /**
      * Constructor, builds the UI blocks
@@ -31,6 +40,12 @@ public class UIContainer{
         HBox menuBar;
         try {
             menuBar = FXMLLoader.load(getClass().getResource("MenuBar.fxml"));
+            
+            //startButton.setOnAction(new EventHandler<ActionEvent>() {
+            //    @Override public void handle(ActionEvent e) {
+            //        menuLabel.setText("Accepted");
+            //    }
+            //});
         } catch (IOException e) {
             // TODO Auto-generated catch block tidy up logging
             menuBar = new HBox();
